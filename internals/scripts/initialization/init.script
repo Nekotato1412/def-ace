@@ -1,0 +1,17 @@
+-- This script handles initialization of the game
+-- It only serves as a loader for an initial collection
+-- To avoid conflicts it will destroy itself after running
+local proxy_loaded = hash("proxy_loaded")
+
+function init(self)
+	msg.post("#title", "load")
+	print("Game is loading!")
+end
+
+function on_message(self, message_id, message, sender) 
+	if message_id == proxy_loaded then 
+		msg.post(sender, "init")
+		msg.post(sender, "enable")
+		go.delete(go.get_id())
+	end
+end
