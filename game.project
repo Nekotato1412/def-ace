@@ -12,5 +12,6 @@ height = 640
 input_method = HiddenInputField
 
 [project]
-title = RPG Framework
+title = DefAce
+dependencies#0 = https://github.com/klaytonkowalski/defold-grid-engine/archive/master.zip
 
